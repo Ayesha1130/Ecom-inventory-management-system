@@ -1,0 +1,8 @@
+node_modules
+.next
+.env*.local
+next-env.d.ts
+playwright-report
+test-results
+docs/screenshots
+.env

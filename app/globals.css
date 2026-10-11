@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #07070b;
+  --color-surface: #0d0d14;
+  --color-raised: #14141e;
+  --color-fg: #f4f4f8;
+  --color-muted: #a1a1b5;
+  --color-violet: #7c5cff;
+  --color-indigo: #4f46e5;
+  --color-cyan: #22d3ee;
+  --color-warn: #f5a524;
+  --color-line: rgb(255 255 255 / 0.08);
+  --font-display: var(--font-instrument), ui-serif, Georgia, serif;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { background: var(--color-bg); color: var(--color-fg); font-family: var(--font-sans); }
+:focus-visible { outline: 2px solid var(--color-cyan); outline-offset: 3px; border-radius: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+.glass {
+  background: rgb(255 255 255 / 0.04);
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(16px);
+  border-radius: 14px;
+}
+.panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+}
+.hero-glow {
+  background:
+    radial-gradient(60% 50% at 72% 28%, rgb(124 92 255 / 0.26), transparent 70%),
+    radial-gradient(40% 40% at 18% 85%, rgb(34 211 238 / 0.08), transparent 70%);
+}
+
+/* Customer storefront: same tokens, re-pointed to a light, warm palette. Scoped so the admin stays dark. */
+.store-theme {
+  --color-bg: #f6f2ea;
+  --color-surface: #fffdf8;
+  --color-raised: #ece6da;
+  --color-fg: #1c1b18;
+  --color-muted: #6b665b;
+  --color-violet: #2f4a3a;
+  --color-cyan: #2f4a3a;
+  --color-line: rgb(28 27 24 / 0.12);
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
